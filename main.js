@@ -7,8 +7,8 @@ import 'swiper/css/pagination';
 //Swiper module
 import Swiper, { Navigation, Pagination, Autoplay } from 'swiper';
 
-// import { gsap } from 'gsap'
-// import ScrollTrigger from 'gsap/ScrollTrigger'
+import { gsap } from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
 
 
 //init Swiper:
@@ -30,18 +30,46 @@ const swiper = new Swiper('.swiper', {
   },
 });
 
-// gsap.registerPlugin(ScrollTrigger);
+//gsap animation start
+gsap.registerPlugin(ScrollTrigger);
+
+function onAnim(){
+  gsap.to('.horSection', {
+    scrollTrigger: {
+      trigger: '.horSection',
+      markers: true,
+      // horizontal: true
+    },
+    x : 100,
+    duration: 2
+  }, 1)
+}
+
+onAnim()
 
 
-// function onAnim(){
-//   gsap.to('.box', {
-//     scrollTrigger: {
-//       trigger: '.box',
-//       markers: true
-//     },
-//     x : 100,
-//     duration: 2
-//   }, 1)
+
+//popup test start
+
+// const testBtn = document.querySelector('.testBtn');
+// const popWrap = document.querySelector('.popWrap');
+// const closeBtn = document.querySelector('.closeBtn');
+
+// function onPopup(){
+//   console.log('show popup');
+//   popWrap.style.display = 'flex';
+
+// }
+// function onPopdown(e){
+//   e.preventDefault();
+//   popWrap.style.display = 'none';
+
 // }
 
-// onAnim()
+// testBtn.addEventListener('click', onPopup)
+// closeBtn.addEventListener('click', onPopdown)
+
+
+//stroke animation strat
+const path = document.querySelector('.cls-1');
+console.log(path.getTotalLength())
