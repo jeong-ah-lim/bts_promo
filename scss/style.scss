@@ -38,8 +38,9 @@
         outline: 1px solid red;
         .ctaBtn {
           position: absolute;
-          min-width: 310px;
-          max-width: 310px;
+          // min-width: 310px;
+          // max-width: 310px;
+          width: calc(100% - 76.78%);
           height: 65px;
           left: 50%;
           top: 50%;
