@@ -5,7 +5,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 //Swiper module
-import Swiper, { Navigation, Pagination, Autoplay } from 'swiper';
+import Swiper, { Navigation, Autoplay } from 'swiper';
 
 import { gsap } from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
@@ -14,16 +14,12 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 //init Swiper:
 const swiper = new Swiper('.swiper', {
   //Optional parameters
-  modules: [Navigation, Pagination, Autoplay],
-  autoplay: {
-   delay: 1000,
-   disableOnInteraction: false,
-  }, 
-  pagination: {
-    el: '.swiper-pagination',
-    type: 'bullets',
-    clickable: true
-  },
+  modules: [Navigation, Autoplay],
+  // loop: true,
+  // autoplay: {
+  //  delay: 3000,
+  //  disableOnInteraction: false,
+  // }, 
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
@@ -31,45 +27,80 @@ const swiper = new Swiper('.swiper', {
 });
 
 //gsap animation start
-gsap.registerPlugin(ScrollTrigger);
 
-function onAnim(){
-  gsap.to('.horSection', {
-    scrollTrigger: {
-      trigger: '.horSection',
-      markers: true,
-      // horizontal: true
-    },
-    x : 100,
-    duration: 2
-  }, 1)
+
+// gsap.registerPlugin(ScrollTrigger);
+// let sections = gsap.utils.toArray(".panel");
+  // let scrollTween = gsap.to(sections, {
+//   xPercent: -100 * (sections.length - 1),
+//   ease: "none", // <-- IMPORTANT!
+//   scrollTrigger: {
+//     trigger: ".container",
+//     pin: true,
+//     scrub: 1,
+//     // snap: directionalSnap(1 / (sections.length - 1)),
+//     end: "+=5000" //speed
+//   }
+// });
+
+// ScrollTrigger.create({
+//   trigger: "#gram",
+//   containerAnimation: scrollTween,
+//   toggleClass: "active",
+//   start: "center 60%"
+// }); 
+
+
+//stroke animation - calc getTotalLength strat
+// const path = document.querySelector('.cls-1');
+// console.log(path.getTotalLength())
+//stroke animation - calc getTotalLength end
+
+
+//intersectionObserver start
+const observeEles = document.querySelectorAll('.panel');
+const options = {
+  threshold: 0.7
 }
+const io = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry) => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('active');
+    }
+  })
+}, options)
+observeEles.forEach((item, i) => {
+  io.observe(item);
+});
+//intersectionObserver end
 
-onAnim()
+
+//horizontal scroll function start
+const container = document.querySelector('.scroll-container');
+container.addEventListener("wheel", (e) => {
+    e.preventDefault();
+    container.scrollLeft += e.deltaY;    
+});
+//horizontal scroll function end
 
 
+// let panelWd;
+// let ctaBtnWd;
+// let ratio;
 
-//popup test start
+// const slidePanel = document.querySelector('.slidePanel');
+// const ctaBtn = document.querySelector('.ctaBtn');
 
-// const testBtn = document.querySelector('.testBtn');
-// const popWrap = document.querySelector('.popWrap');
-// const closeBtn = document.querySelector('.closeBtn');
-
-// function onPopup(){
-//   console.log('show popup');
-//   popWrap.style.display = 'flex';
-
+// function onCalcValue(){  
+//   panelWd = slidePanel.getBoundingClientRect().width; //패널의 너비값
+//   ctaBtnWd = ctaBtn.getBoundingClientRect().width; //버튼의 너비값
+//   ratio = panelWd / ctaBtnWd; //비율
+//   ctaBtn.style.Width = `${ratio}px`;
+//   console.log(ctaBtnWd);
+//   console.log(ratio);
 // }
-// function onPopdown(e){
-//   e.preventDefault();
-//   popWrap.style.display = 'none';
-
-// }
-
-// testBtn.addEventListener('click', onPopup)
-// closeBtn.addEventListener('click', onPopdown)
 
 
-//stroke animation strat
-const path = document.querySelector('.cls-1');
-console.log(path.getTotalLength())
+// window.addEventListener('resize', onCalcValue);
+// onCalcValue();
+
