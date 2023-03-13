@@ -79,7 +79,7 @@ observeEles.forEach((item, i) => {
 const container = document.querySelector('.scroll-container');
 container.addEventListener("wheel", (e) => {
     e.preventDefault();
-    container.scrollLeft += e.deltaY;    
+    container.scrollLeft += e.deltaY;
 });
 //horizontal scroll function end
 
