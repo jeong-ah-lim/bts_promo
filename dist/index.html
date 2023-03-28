@@ -1,89 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
-
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/9.18.0/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/9.18.0/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/9.18.0/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/9.18.0/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/9.18.0/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/9.18.0/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/9.18.0/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/9.18.0/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/9.18.0/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/9.18.0/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <script type="module" crossorigin src="/assets/index-913b1886.js"></script>
+    <link rel="stylesheet" href="/assets/index-6e2eac48.css">
   </head>
   <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+    <div class="wrap">
+      <div class="scroll-container">
+        <div class="panel">
+          <img src="/images/horizontal_panel_01.png" alt="">
+        </div>
+        <div class="panel">
+          <img src="/images/horizontal_panel_02.png" alt="">
+          <a class="ctaBtn" href="#" target="_blank">과제꿀팩.zip 신청하기</a>
+        </div>
+        <div class="panel">
+          <img src="/images/horizontal_panel_03.png" alt="">
+        </div>
+        <div class="panel slidePanel">
+          <img src="/images/horizontal_panel_04.png" alt="">
+          <div class="slideCol">
+            <!-- Slider main container -->
+            <div class="swiper">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide"><img src="/images/slide_01.png" alt=""></div>
+                <div class="swiper-slide"><img src="/images/slide_02.png" alt=""></div>
+              </div>
+            </div>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>  
+        </div>
+        <div class="panel">
+          <img src="/images/horizontal_panel_05.png" alt="">
+          <div class="animCol">
+            <svg width="759" height="414" viewBox="0 0 759 414" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path id="gram" d="M166.935 145.054C164.767 123.372 142.09 114.73 122.215 114.73C96.4237 114.73 43.9332 122.657 29.099 147.81C21.5859 160.55 20.2521 177.602 33.9999 185.792C52.5919 196.868 79.1546 198.119 98.9361 189.774C116.633 182.308 122.747 169.081 133.242 154.549C136.199 150.455 144.887 130.392 145.494 131.883C158.717 164.339 162.209 202.774 160.809 237.557C158.758 288.558 146.105 330.01 106.594 364.06C83.7664 383.733 47.1611 411.572 15.3154 412.456C-15.7855 413.32 16.1438 353.361 22.6667 343.844C47.8365 307.121 81.6224 279.647 113.026 248.584C133.591 228.243 160.461 210.276 178.575 187.936C188.547 175.637 197.587 163.152 204.917 149.036C207.567 143.933 234.995 109.938 235.854 120.243C237.861 144.335 233.098 167.388 225.439 190.08C223.94 194.523 219.887 211.183 214.412 212.747C205.933 215.169 227.199 200.576 234.016 194.981C276.081 160.456 325.78 125.564 377.059 106.46C389.411 101.858 409.901 95.6672 396.356 114.73C388.79 125.379 372.696 143.213 377.059 157.612C380.125 167.729 403.057 158.938 407.996 155.468C429.574 140.305 410.221 120.693 423.005 104.622C441.145 81.8165 488.107 62.2317 517.04 60.8204C532.988 60.0424 531.172 99.7995 530.823 109.216C530.378 121.256 518.046 155.643 520.409 143.829C522.646 132.644 529.258 122.333 535.724 113.198C540.555 106.373 581.629 57.5756 588.715 76.7482C594.202 91.5972 588.904 138.827 594.228 123.919C612.409 73.0115 673.232 36.5026 717.668 13.6497C737.773 3.31002 756.875 -8.67455 756.875 18.5506C756.875 43.6108 754.616 65.8752 748.605 89.9192" stroke="black" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+        <div class="panel">
+          <img src="/images/horizontal_panel_06.png" alt="">
+        </div>
+        <div class="panel">
+          <img src="/images/horizontal_panel_07.png" alt="">
+        </div>
+        <div class="panel">
+          <img src="/images/horizontal_panel_08.png" alt="">
+        </div>
+        <div class="panel">
+          <img src="/images/horizontal_panel_09.png" alt="">
+        </div>
+        <div class="panel">
+          <img src="/images/horizontal_panel_10.png" alt="">
+        </div>
+        <div class="panel">
+          <img src="/images/horizontal_panel_11.png" alt="">
+        </div>
+        <div class="panel">
+          <img src="/images/horizontal_panel_12.png" alt="">
+        </div>
+      </div>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
+    
+    
   </body>
 </html>
